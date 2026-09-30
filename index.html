@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>VibeVault | Wallpapers & Telugu BGM</title>
+
+
+    <!-- =========================
+         INTERNAL CSS
+    ========================== -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #050014,
+                    #16002e,
+                    #001c35,
+                    #28001f
+                );
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 60px;
+
+            background:
+                rgba(5, 5, 20, 0.75);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.15);
+        }
+
+
+        .logo {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #ff00cc,
+                    #ffe600
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+
+            color: #00eaff;
+
+            text-shadow:
+                0 0 15px #00eaff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,0,204,0.25),
+                    transparent 55%
+                );
+        }
+
+
+        .hero h1 {
+
+            font-size: 65px;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #ff00cc,
+                    #ffe600
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .hero p {
+
+            font-size: 20px;
+
+            color: #ddd;
+
+            margin-bottom: 35px;
+        }
+
+
+        .search {
+
+            width: 450px;
+
+            max-width: 90%;
+
+            padding: 17px 25px;
+
+            border-radius: 30px;
+
+            border:
+                2px solid #00eaff;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color: white;
+
+            outline: none;
+
+            font-size: 16px;
+
+            box-shadow:
+                0 0 20px
+                rgba(0,234,255,0.3);
+        }
+
+
+        .search::placeholder {
+
+            color: #ccc;
+        }
+
+
+        /* =========================
+           CATEGORY BUTTONS
+        ========================== */
+
+        .categories {
+
+            text-align: center;
+
+            padding: 10px 20px 40px;
+        }
+
+
+        .category {
+
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            margin: 6px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.2);
+
+            transition: 0.3s;
+        }
+
+
+        .category:hover {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #7b00ff
+                );
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 20px #00eaff;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+
+            padding:
+                50px 60px;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: 40px;
+
+            margin-bottom: 45px;
+
+            text-shadow:
+                0 0 20px
+                rgba(255,0,204,0.8);
+        }
+
+
+        /* =========================
+           WALLPAPER GRID
+        ========================== */
+
+        .wallpaper-container {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 30px;
+        }
+
+
+        /* =========================
+           WALLPAPER CARD
+        ========================== */
+
+        .wallpaper-card {
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            padding-bottom: 25px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.4s;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,0,0,0.5);
+        }
+
+
+        .wallpaper-card:hover {
+
+            transform:
+                translateY(-12px)
+                scale(1.02);
+
+            box-shadow:
+                0 0 25px #00eaff,
+                0 0 50px
+                rgba(255,0,204,0.5);
+        }
+
+
+        .wallpaper-card img {
+
+            width: 100%;
+
+            height: 270px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: 0.5s;
+        }
+
+
+        .wallpaper-card:hover img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        .wallpaper-card h3 {
+
+            margin: 20px 10px;
+
+            font-size: 21px;
+        }
+
+
+        /* =========================
+           DOWNLOAD BUTTON
+        ========================== */
+
+        .download {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #0072ff
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(0,198,255,0.5);
+
+            transition: 0.3s;
+        }
+
+
+        .download:hover {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff00cc,
+                    #ff0066
+                );
+
+            box-shadow:
+                0 0 20px #ff00cc;
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =========================
+           MUSIC SECTION
+        ========================== */
+
+        .music-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+
+        .music-card {
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,0,204,0.15),
+                    rgba(0,234,255,0.12)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter: blur(12px);
+
+            transition: 0.3s;
+        }
+
+
+        .music-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 0 30px
+                rgba(255,0,204,0.5);
+        }
+
+
+        .music-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .music-card h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .music-card p {
+
+            color: #bbb;
+
+            margin-bottom: 20px;
+        }
+
+
+        audio {
+
+            width: 100%;
+
+            margin-bottom: 20px;
+        }
+
+
+        .music-download {
+
+            display: inline-block;
+
+            padding: 11px 22px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff00cc,
+                    #7b00ff
+                );
+
+            transition: 0.3s;
+        }
+
+
+        .music-download:hover {
+
+            box-shadow:
+                0 0 20px #ff00cc;
+
+            transform:
+                scale(1.05);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            margin-top: 70px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background:
+                rgba(0,0,0,0.5);
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.1);
+        }
+
+
+        footer h2 {
+
+            margin-bottom: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #ff00cc
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        footer p {
+
+            color: #aaa;
+
+            margin: 5px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav a {
+
+                margin:
+                    0 7px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+
+            section {
+
+                padding:
+                    40px 20px;
+            }
+
+
+            .section-title {
+
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            🌌 VibeVault
+        </div>
+
+
+        <nav>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#devara">
+                Devara
+            </a>
+
+            <a href="#demon">
+                Demon Slayer
+            </a>
+
+            <a href="#bgm">
+                Telugu BGM
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <div class="hero" id="home">
+
+        <h1>
+            VibeVault
+        </h1>
+
+        <p>
+            🖼️ 8K Wallpapers
+            •
+            🎵 Telugu BGM
+            •
+            🎧 Cinematic Vibes
+        </p>
+
+
+        <input
+            class="search"
+            type="text"
+            placeholder="🔍 Search wallpapers & BGM..."
+        >
+
+    </div>
+
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <div class="categories">
+
+        <a
+            href="#devara"
+            class="category">
+            🔥 Devara
+        </a>
+
+
+        <a
+            href="#demon"
+            class="category">
+            ⚔️ Demon Slayer
+        </a>
+
+
+        <a
+            href="#bgm"
+            class="category">
+            🎵 Telugu BGM
+        </a>
+
+
+        <a
+            href="#bgm"
+            class="category">
+            🎬 Cinematic
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================
+         DEVARA WALLPAPERS
+    ========================== -->
+
+    <section id="devara">
+
+        <h2 class="section-title">
+            🔥 Devara Collection
+        </h2>
+
+
+        <div class="wallpaper-container">
+
+
+            <!-- DEVARA 1 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/devara-red-sea.jpg"
+                    alt="Devara Red Sea Wallpaper"
+                >
+
+                <h3>
+                    🌊 Devara - Red Sea
+                </h3>
+
+
+                <a
+                    href="images/devara-red-sea.jpg"
+                    download="Devara-Red-Sea-8K.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+
+
+            <!-- DEVARA 2 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/devara-sunset.jpg"
+                    alt="Devara Sunset Wallpaper"
+                >
+
+                <h3>
+                    🌅 Devara - Sunset
+                </h3>
+
+
+                <a
+                    href="images/devara-sunset.jpg"
+                    download="Devara-Sunset-8K.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+
+
+            <!-- DEVARA 3 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/devara-storm.jpg"
+                    alt="Devara Storm Wallpaper"
+                >
+
+                <h3>
+                    ⚡ Devara - Storm
+                </h3>
+
+
+                <a
+                    href="images/devara-storm.jpg"
+                    download="Devara-Storm-8K.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DEMON SLAYER
+    ========================== -->
+
+    <section id="demon">
+
+        <h2 class="section-title">
+            ⚔️ Demon Slayer Wallpapers
+        </h2>
+
+
+        <div class="wallpaper-container">
+
+
+            <!-- DEMON 1 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/demon-slayer-1.jpg"
+                    alt="Demon Slayer Wallpaper"
+                >
+
+                <h3>
+                    ⚔️ Demon Slayer
+                </h3>
+
+
+                <a
+                    href="images/demon-slayer-1.jpg"
+                    download="Demon-Slayer-1.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+
+
+            <!-- DEMON 2 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/demon-slayer-2.jpg"
+                    alt="Demon Slayer Wallpaper"
+                >
+
+                <h3>
+                    🔥 Demon Slayer
+                </h3>
+
+
+                <a
+                    href="images/demon-slayer-2.jpg"
+                    download="Demon-Slayer-2.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+
+
+            <!-- DEMON 3 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/demon-slayer-3.jpg"
+                    alt="Demon Slayer Wallpaper"
+                >
+
+                <h3>
+                    🌊 Demon Slayer
+                </h3>
+
+
+                <a
+                    href="images/demon-slayer-3.jpg"
+                    download="Demon-Slayer-3.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+
+
+            <!-- DEMON 4 -->
+
+            <div class="wallpaper-card">
+
+                <img
+                    src="images/demon-slayer-4.jpg"
+                    alt="Demon Slayer Wallpaper"
+                >
+
+                <h3>
+                    🌙 Demon Slayer
+                </h3>
+
+
+                <a
+                    href="images/demon-slayer-4.jpg"
+                    download="Demon-Slayer-4.jpg"
+                    class="download"
+                >
+                    ⬇ Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TELUGU BGM
+    ========================== -->
+
+    <section id="bgm">
+
+        <h2 class="section-title">
+            🎵 Telugu BGM Collection
+        </h2>
+
+
+        <div class="music-container">
+
+
+            <!-- BGM 1 -->
+
+            <div class="music-card">
+
+                <div class="music-icon">
+                    🔥
+                </div>
+
+
+                <h3>
+                    Mass Telugu BGM
+                </h3>
+
+
+                <p>
+                    Powerful Mass BGM
+                </p>
+
+
+                <audio controls>
+
+                    <source
+                        src="audio/telugu-bgm-1.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Your browser does not support
+                    audio.
+
+                </audio>
+
+
+                <a
+                    href="audio/telugu-bgm-1.mp3"
+                    download="Telugu-Mass-BGM.mp3"
+                    class="music-download"
+                >
+                    ⬇ Download BGM
+                </a>
+
+            </div>
+
+
+
+            <!-- BGM 2 -->
+
+            <div class="music-card">
+
+                <div class="music-icon">
+                    ⚡
+                </div>
+
+
+                <h3>
+                    Hero Entry BGM
+                </h3>
+
+
+                <p>
+                    Powerful Hero Entry Music
+                </p>
+
+
+                <audio controls>
+
+                    <source
+                        src="audio/telugu-bgm-2.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Your browser does not support
+                    audio.
+
+                </audio>
+
+
+                <a
+                    href="audio/telugu-bgm-2.mp3"
+                    download="Hero-Entry-BGM.mp3"
+                    class="music-download"
+                >
+                    ⬇ Download BGM
+                </a>
+
+            </div>
+
+
+
+            <!-- BGM 3 -->
+
+            <div class="music-card">
+
+                <div class="music-icon">
+                    👑
+                </div>
+
+
+                <h3>
+                    Royal BGM
+                </h3>
+
+
+                <p>
+                    Epic Cinematic BGM
+                </p>
+
+
+                <audio controls>
+
+                    <source
+                        src="audio/telugu-bgm-3.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Your browser does not support
+                    audio.
+
+                </audio>
+
+
+                <a
+                    href="audio/telugu-bgm-3.mp3"
+                    download="Royal-Telugu-BGM.mp3"
+                    class="music-download"
+                >
+                    ⬇ Download BGM
+                </a>
+
+            </div>
+
+
+
+            <!-- BGM 4 -->
+
+            <div class="music-card">
+
+                <div class="music-icon">
+                    🌊
+                </div>
+
+
+                <h3>
+                    Emotional BGM
+                </h3>
+
+
+                <p>
+                    Emotional Telugu Cinematic Music
+                </p>
+
+
+                <audio controls>
+
+                    <source
+                        src="audio/telugu-bgm-4.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Your browser does not support
+                    audio.
+
+                </audio>
+
+
+                <a
+                    href="audio/telugu-bgm-4.mp3"
+                    download="Emotional-Telugu-BGM.mp3"
+                    class="music-download"
+                >
+                    ⬇ Download BGM
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h2>
+            🌌 VibeVault
+        </h2>
+
+        <p>
+            8K Wallpapers • Anime • Devara • Telugu BGM
+        </p>
+
+        <p>
+            © 2026 VibeVault
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
